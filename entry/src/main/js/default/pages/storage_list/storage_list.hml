@@ -1,0 +1,5 @@
+<div class="st-item" style="flex-direction: column; margin-left: 25px;">
+     <image class="st-item-image" src="{{st_item_image}}"></image>
+     <text class="st-item-name">{{st_item_name}}</text>
+     <text class="st-item-weight">{{st_item_weight}}</text>
+</div>

@@ -1,0 +1,25 @@
+{
+ "setting": {
+  "1.0.1": {
+   "Language": {
+    "args": {
+     "Language": "en_US"
+    }
+   }
+  }
+ },
+ "frontend": {
+  "1.0.0": {
+   "Resolution": {
+    "args": {
+     "Resolution": "1024*640"
+    }
+   },
+   "DeviceType": {
+    "args": {
+     "DeviceType": "tablet"
+    }
+   }
+  }
+ }
+}

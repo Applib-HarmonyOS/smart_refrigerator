@@ -1,0 +1,179 @@
+<element name="recipie-compnent" src="../recipie_block/recipie_block.hml"></element>
+<element name="storage-list" src="../storage_list/storage_list.hml"></element>
+<element name="percentage-bar" src="../percent_bar/percent_bar.hml"></element>
+<div class="container" style="background-image: {{bg}};">
+    <div class="status-bar" style="flex-direction: row;">
+        <image class="wifi" src="{{wifi}}"></image>
+        <image class="apps" src="{{apps}}"></image>
+        <image class="lock" src="{{lock}}"></image>
+        <text class="time">{{time}}</text>
+    </div>
+
+    <text class="user-name">Hey {{username}}</text>
+
+    <div class="set1" style="flex-direction: row;">
+        <div class="time-bg" style="background-image: {{time_bg}};">
+            <div>
+                <image class="location-icon" src="{{location}}"/>
+                <div style="width: 160px; justify-content: space-between; ">
+                    <text class="location-city">{{location_city}}</text>
+                    <image class="weather" src="{{weather}}"></image>
+                </div>
+            </div>
+            <text class="time-txt">{{time}}</text>
+            <text class="day-date">{{day_date}}</text>
+            <div class="temp-page">
+                <text class="temp">{{temp_red}}</text>
+                <div>
+                    <image class="page" src="{{scroll_inactive}}"/>
+                    <image class="page" src="{{scroll_inactive}}" style="image-fill: white;"/>
+                    <image class="page" src="{{scroll_inactive}}"/>
+                    <image class="page" src="{{scroll_inactive}}"/>
+                    <image class="page" src="{{scroll_inactive}}"/>
+
+                </div>
+            </div>
+        </div>
+        <div class="music-bg" style="background-image: {{music_bg}};flex-direction: column;">
+            <image class="dreams-bg" src="{{music_cover_image}}"/>
+            <text class="song-name">{{song_name}}</text>
+            <text class="song-genre">{{song_genre}}</text>
+            <div class="set1_sub">
+                <image class="shuffle" src="{{shuffle}}"/>
+                <image class="back" src="{{back}}"/>
+                <image class="play" src="{{play}}"/>
+                <image class="next" src="{{next}}"/>
+                <image class="range" src="{{range}}"/>
+            </div>
+        </div>
+        <div class="food-remaining" style="background-image: {{music_bg}};">
+            <text class="food-remain">{{food_remain}}</text>
+            <percentage-bar product_name="Vegetables" product_percent="{{ vegetable_percentage }}"
+                            percent_color="{{green_range}}"></percentage-bar>
+            <percentage-bar product_name="Fruits" product_percent="{{ fruits_percentage }}"
+                            percent_color="{{violet_range}}"></percentage-bar>
+            <percentage-bar product_name="Meat" product_percent="{{ meat_percentage }}"
+                            percent_color="{{orange_range}}"></percentage-bar>
+
+        </div>
+    </div>
+
+    <text class="storage-settings">{{storage_settings}}</text>
+    <div class="set2" style="flex-direction: row;">
+        <div class="storage-tab" style="background-image: {{storage_bg}}; flex-direction:column">
+            <div class="your-storage-markers" style="flex-direction: row;">
+                <text class="storage-txt-1">{{your_storage}}</text>
+                <div>
+                    <image class="view-icon" src="{{view_icon}}"></image>
+                    <text class="view-txt">{{view_text}}</text>
+                    <image class="add-icon" src="{{add_icon}}"></image>
+                    <text class="add-txt">{{add_text}}</text>
+                </div>
+            </div>
+            <div style="flex-direction: row; margin-top:30.35px">
+                <list id="List" style="flex-direction: row; padding-right: 15px;">
+                    <list-item type="common">
+                        <storage-list st_item_image="{{st_item_1}}" st_item_name="{{st_item_1_name}}"
+                                      st_item_weight="{{st_item_1_weight}}"></storage-list>
+                        <storage-list st_item_image="{{st_item_2}}" st_item_name="{{st_item_2_name}}"
+                                      st_item_weight="{{st_item_2_weight}}"></storage-list>
+                        <storage-list st_item_image="{{st_item_3}}" st_item_name="{{st_item_3_name}}"
+                                      st_item_weight="{{st_item_3_weight}}"></storage-list>
+                        <storage-list st_item_image="{{st_item_4}}" st_item_name="{{st_item_4_name}}"
+                                      st_item_weight="{{st_item_4_weight}}"></storage-list>
+                        <storage-list st_item_image="{{st_item_5}}" st_item_name="{{st_item_5_name}}"
+                                      st_item_weight="{{st_item_5_weight}}"></storage-list>
+                    </list-item>
+                </list>
+            </div>
+        </div>
+
+        <div class="help" style="background-image: {{tap_to_speak_bg}};flex-direction: column;">
+            <text class="audio-assist1">{{audio_assist1}}</text>
+            <image class="mic" src="{{microphone}}"></image>
+            <text class="audio-assist2">{{audio_assist2}}</text>
+        </div>
+    </div>
+
+    <div class="set3" style="flex-direction: row;">
+        <list id="List" style="flex-direction: row;">
+            <list-item type="common">
+                <div class="refri-door" style="background-image: {{refrigerator_doors_bg}}; flex-direction: column;">
+                    <text class="refri-door-text">{{door_text}}</text>
+                    <text class="refri-door-status">{{door_status}}</text>
+                    <div class="refri-door-status-button" style="background-image: {{pink_button}}; background-size: cover;" onclick="door_lock_onclick">
+                        <text class="refri-door-status-button-txt">{{door_status_toggle}}</text>
+                    </div>
+                </div>
+                <div class="superfreeze" style="background-image: {{music_bg}};">
+                    <text class="refri-door-text">Superfreeze</text>
+                    <div class="toggle-txt-button">
+                        <text class="superfreeze-toggle">{{ superfreeze_toggle_txt }}</text>
+                        <switch  @change="superfreeze_onSwitchChange" checked="{{superfreeze_toggle_txt_bool}}"></switch>
+                    </div>
+                </div>
+                <div class="bottom-left-box" style="background-image: {{music_bg}};">
+                    <text class="refri-door-text">Bottom Box Left</text>
+                    <div>
+                        <select class="bottom-left-box-toggle">
+                            <option value="{{bottom_box_left_toggle_text}}" selected="true">{{bottom_box_left_toggle_text}}</option>
+                            <option value="Super Freeze">Super Freeze</option>
+                            <option value="Fresh">Fresh</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bottom-right-box" style="background-image: {{music_bg}};">
+                    <text class="refri-door-text">Bottom Box Right</text>
+                    <div>
+                        <select class="bottom-right-box-toggle">
+                            <option value="{{bottom_box_right_toggle_text}}" selected="true">{{bottom_box_right_toggle_text}}</option>
+                            <option value="Super Freeze">Super Freeze</option>
+                            <option value="Freeze">Freeze</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="crisp-fresh" style="background-image: {{music_bg}};">
+                    <text class="refri-door-text">Crisp Fresh</text>
+                    <div class="toggle-txt-button">
+                        <text class="crisp-fresh-toggle">{{ crisp_fresh_toggle_txt }}</text>
+                        <switch @change="crispfresh_onSwitchChange" checked="{{crisp_fresh_toggle_txt_bool}}" ></switch>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+
+    <div class="set4">
+        <text class="{{dinner-text}}">{{dinner_text}}</text>
+    </div>
+
+    <div class="set5">
+        <recipie-compnent user_reaction="{{recp_1_user_reaction}}" recp_name= '{{recp_1_name}}'
+                          recp_type= '{{recp_1_type}}' time_recp='{{recp_1_time}}' recp_image="{{recp_1_image}}"></recipie-compnent>
+        <recipie-compnent user_reaction="{{recp_2_user_reaction}}" recp_name= '{{recp_2_name}}'
+                          recp_type= '{{recp_2_type}}' time_recp='{{recp_2_time}}' recp_image="{{recp_2_image}}"></recipie-compnent>
+        <recipie-compnent user_reaction="{{recp_3_user_reaction}}" recp_name= '{{recp_3_name}}'
+                          recp_type= '{{recp_3_type}}' time_recp='{{recp_3_time}}' recp_image="{{recp_3_image}}"></recipie-compnent>
+
+
+    </div>
+    <div class="set6" style="background-image: {{bottom_tab_bg}}; flex-direction: row;">
+        <div style="flex-direction: column;" >
+            <image class="home-icon" src="{{home_icon}}"></image>
+            <text class="home-txt">{{home_txt}}</text>
+        </div>
+        <div style="flex-direction: column;" >
+            <image class="storage-icon" src="{{storage_icon}}"></image>
+            <text class="storage-txt">{{storage_txt}}</text>
+        </div>
+        <div style="flex-direction: column;" >
+            <image class="music-icon" src="{{music_icon}}"></image>
+            <text class="music-txt">{{music_txt}}</text>
+        </div>
+        <div style="flex-direction: column;" >
+            <image class="settings-icon" src="{{settings_icon}}"></image>
+            <text class="settings-txt">{{settings_txt}}</text>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="basic-recepie" style="background-image: {{recepie_bg}}; flex-direction: column;">
+    <div style="flex-direction: row;">
+        <image class="recp-img" src="{{recp_image}}"></image>
+        <image class="recp-img-fav" src="{{favourite_icon}}" onclick="user_reaction_listner"></image>
+    </div>
+    <text class="recp-name">{{recp_name}}</text>
+    <div style="flex-direction: row;">
+        <image class="clock" src="{{clock}}"/>
+        <div class="recp-settings" >
+            <text class="recp-time">{{time_recp}}</text>
+            <text class="recp-type">{{recp_type}}</text>
+        </div>
+    </div>
+</div>
