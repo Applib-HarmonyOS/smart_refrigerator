@@ -71,18 +71,10 @@
                 </div>
             </div>
             <div style="flex-direction: row; margin-top:30.35px">
-                <list id="List" style="flex-direction: row; padding-right: 15px;">
-                    <list-item type="common">
-                        <storage-list st_item_image="{{st_item_1}}" st_item_name="{{st_item_1_name}}"
-                                      st_item_weight="{{st_item_1_weight}}"></storage-list>
-                        <storage-list st_item_image="{{st_item_2}}" st_item_name="{{st_item_2_name}}"
-                                      st_item_weight="{{st_item_2_weight}}"></storage-list>
-                        <storage-list st_item_image="{{st_item_3}}" st_item_name="{{st_item_3_name}}"
-                                      st_item_weight="{{st_item_3_weight}}"></storage-list>
-                        <storage-list st_item_image="{{st_item_4}}" st_item_name="{{st_item_4_name}}"
-                                      st_item_weight="{{st_item_4_weight}}"></storage-list>
-                        <storage-list st_item_image="{{st_item_5}}" st_item_name="{{st_item_5_name}}"
-                                      st_item_weight="{{st_item_5_weight}}"></storage-list>
+                <list style="flex-direction: row; padding-right: 15px;">
+                    <list-item for="{{st_items}}">
+                        <storage-list st_item_image="{{$item.img_path}}" st_item_name="{{$item.food_name}}"
+                                      st_item_weight="{{$item.item_weight}}"></storage-list>
                     </list-item>
                 </list>
             </div>

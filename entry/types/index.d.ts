@@ -59,21 +59,11 @@ declare namespace _default {
         const vegetable_percentage: string;
         const fruits_percentage: string;
         const meat_percentage: string;
-        const st_item_1: string;
-        const st_item_1_name: string;
-        const st_item_1_weight: string;
-        const st_item_2: string;
-        const st_item_2_name: string;
-        const st_item_2_weight: string;
-        const st_item_3: string;
-        const st_item_3_name: string;
-        const st_item_3_weight: string;
-        const st_item_4: string;
-        const st_item_4_name: string;
-        const st_item_4_weight: string;
-        const st_item_5: string;
-        const st_item_5_name: string;
-        const st_item_5_weight: string;
+        const st_items: {
+            img_path: string;
+            food_name: string;
+            item_weight: string;
+        }[];
         const door_status: string;
         const door_status_toggle: string;
         const superfreeze_toggle_txt: string;
@@ -100,6 +90,8 @@ declare namespace _default {
     }
     function onInit(): void;
     function onInit(): void;
+    function getRecipeList(e: any): void;
+    function getRecipeList(e: any): void;
     function date_time_calc(e: any): void;
     function date_time_calc(e: any): void;
     function superfreeze_onSwitchChange(e: any): void;

@@ -71,21 +71,11 @@ export default {
         meat_percentage:"20%",
 
         //      Storage Setting Items
-        st_item_1: '/common/images/chicken.png',
-        st_item_1_name:"Fresh Chicken",
-        st_item_1_weight:"1kg",
-        st_item_2: '/common/images/vegetables.png',
-        st_item_2_name:"Vegetables",
-        st_item_2_weight:"3kg",
-        st_item_3: '/common/images/spinach.png',
-        st_item_3_name:"Spinach",
-        st_item_3_weight:"500g",
-        st_item_4: '/common/images/fruits.png',
-        st_item_4_name:"Fruits",
-        st_item_4_weight:"3kg",
-        st_item_5: '/common/images/fruits.png',
-        st_item_5_name:"Milk",
-        st_item_5_weight:"2lts",
+        st_items :[{img_path: '/common/images/chicken.png',food_name:"Fresh Chicken",item_weight:"1kg"},
+                    {img_path:'/common/images/vegetables.png',food_name:"Vegetables",item_weight:"3kg"},
+                    {img_path:'/common/images/spinach.png',food_name:"Spinach",item_weight:"500g"},
+                    {img_path:'/common/images/fruits.png',food_name:"Fruits",item_weight:"3kg"},
+                    {img_path:'/common/images/fruits.png',food_name:"Milk",item_weight:"2lts"}],
 
         //      Refrigeator Settings
         door_status:"Locked",
@@ -138,6 +128,10 @@ export default {
         }
 
 
+    },
+
+    getRecipeList(e){
+      this.st_items;
     },
 
     date_time_calc(e){
