@@ -1,3 +1,5 @@
+// @ts-nocheck
+import items from '../../i18n/items.json';
 export default {
     data: {
         //      I M A G E S
@@ -71,11 +73,7 @@ export default {
         meat_percentage:"20%",
 
         //      Storage Setting Items
-        st_items :[{img_path: '/common/images/chicken.png',food_name:"Fresh Chicken",item_weight:"1kg"},
-                    {img_path:'/common/images/vegetables.png',food_name:"Vegetables",item_weight:"3kg"},
-                    {img_path:'/common/images/spinach.png',food_name:"Spinach",item_weight:"500g"},
-                    {img_path:'/common/images/fruits.png',food_name:"Fruits",item_weight:"3kg"},
-                    {img_path:'/common/images/fruits.png',food_name:"Milk",item_weight:"2lts"}],
+        st_items :[],
 
         //      Refrigeator Settings
         door_status:"Locked",
@@ -127,11 +125,14 @@ export default {
             this.crisp_fresh_toggle_txt_bool="false";
         }
 
-
+        this.getRecipeList(this);
     },
 
     getRecipeList(e){
-      this.st_items;
+        var data = JSON.stringify(items);
+        this.st_items = JSON.parse(data);
+        console.log(this.st_items);
+
     },
 
     date_time_calc(e){

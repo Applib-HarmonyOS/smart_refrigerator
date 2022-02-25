@@ -1,0 +1,12 @@
+[
+  {"img_path":"/common/images/chicken.png", "food_name":"Fresh Chicken", "item_weight":"1kg"},
+  {"img_path":"/common/images/vegetables.png", "food_name":"Vegetables", "item_weight":"3kg"},
+  {"img_path":"/common/images/spinach.png", "food_name":"Spinach", "item_weight":"500g"},
+  {"img_path":"/common/images/fruits.png", "food_name":"Fruits", "item_weight":"3kg"},
+  {"img_path":"/common/images/fruits.png", "food_name":"Milk", "item_weight":"2lts"}
+]
+
+
+
+
+
