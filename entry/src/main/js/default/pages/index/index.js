@@ -1,5 +1,7 @@
 // @ts-nocheck
 import items from '../../i18n/items.json';
+import item2 from '../../i18n/food_remain.json';
+import item3 from '../../i18n/music_info.json';
 export default {
     data: {
         //      I M A G E S
@@ -23,9 +25,6 @@ export default {
         next: '/common/images/next.png',
         range: '/common/images/range.png',
         vegetables_range_white: '/common/images/vegetables_range_white.png',
-        green_range: '/common/images/green_range.png',
-        orange_range: '/common/images/orange_range.png',
-        violet_range: '/common/images/violet_range.png',
         microphone: '/common/images/microphone.png',
         clock: '/common/images/clock.png',
         favourite_active: '/common/images/favourite_active.png',
@@ -63,14 +62,13 @@ export default {
         temp_red:"30°",
 
         //      Music Information
-        music_cover_image:'/common/images/dreams_img.png',
-        song_name: 'Dreams',
-        song_genre: 'Romantic',
+//        music_cover_image:'/common/images/dreams_img.png',
+//        song_name: 'Dreams',
+//        song_genre: 'Romantic',
+        music_info:[],
 
         //      Food Remaining tab
-        vegetable_percentage:"72%",
-        fruits_percentage:"50%",
-        meat_percentage:"20%",
+        food_remaining:[],
 
         //      Storage Setting Items
         st_items :[],
@@ -79,10 +77,10 @@ export default {
         door_status:"Locked",
         door_status_toggle:"Unlock",
         superfreeze_toggle_txt:"On",
-        superfreeze_toggle_txt_bool:"",
         bottom_box_left_toggle_text: "Freeze",
         bottom_box_right_toggle_text: "Fresh",
         crisp_fresh_toggle_txt:"On",
+        superfreeze_toggle_txt_bool:"",
         crisp_fresh_toggle_txt_bool:"",
 
 
@@ -126,6 +124,8 @@ export default {
         }
 
         this.getRecipeList(this);
+        this.getFoodRemaining(this);
+        this.music_information(this);
     },
 
     getRecipeList(e){
@@ -133,6 +133,16 @@ export default {
         this.st_items = JSON.parse(data);
         console.log(this.st_items);
 
+    },
+    getFoodRemaining(e){
+        var data2 = JSON.stringify(item2);
+        this.food_remaining = JSON.parse(data2);
+        console.log(this.food_remaining);
+    },
+    music_information(e){
+        var data3 = JSON.stringify(item3);
+        this.music_info = JSON.parse(data3);
+        console.log(this.music_info);
     },
 
     date_time_calc(e){

@@ -35,9 +35,13 @@
             </div>
         </div>
         <div class="music-bg" style="background-image: {{music_bg}};flex-direction: column;">
-            <image class="dreams-bg" src="{{music_cover_image}}"/>
-            <text class="song-name">{{song_name}}</text>
-            <text class="song-genre">{{song_genre}}</text>
+            <div style="flex-direction: column;  height: 150px; " >
+                <list-item for="{{music_info}}" style="flex-direction: column;">
+                    <image class="dreams-bg" src="{{$item.music_cover_image}}"/>
+                    <text class="song-name" style="text-align: center;">{{$item.music_name}}</text>
+                    <text class="song-genre">{{$item.music_genre}}</text>
+                </list-item>
+            </div>
             <div class="set1_sub">
                 <image class="shuffle" src="{{shuffle}}"/>
                 <image class="back" src="{{back}}"/>
@@ -48,12 +52,13 @@
         </div>
         <div class="food-remaining" style="background-image: {{music_bg}};">
             <text class="food-remain">{{food_remain}}</text>
-            <percentage-bar product_name="Vegetables" product_percent="{{ vegetable_percentage }}"
-                            percent_color="{{green_range}}"></percentage-bar>
-            <percentage-bar product_name="Fruits" product_percent="{{ fruits_percentage }}"
-                            percent_color="{{violet_range}}"></percentage-bar>
-            <percentage-bar product_name="Meat" product_percent="{{ meat_percentage }}"
-                            percent_color="{{orange_range}}"></percentage-bar>
+            <div style="flex-direction: column; height: 140px; margin-top: 20px;justify-content: space-between;">
+                    <list-item for="{{food_remaining}}">
+                        <percentage-bar product_name="{{$item.food_name}}"
+                                        product_percent="{{$item.food_percentage}}"
+                                        percent_color="{{$item.percent_color}}"></percentage-bar>
+                    </list-item>
+            </div>
 
         </div>
     </div>
@@ -73,7 +78,8 @@
             <div style="flex-direction: row; margin-top:30.35px">
                 <list style="flex-direction: row; padding-right: 15px;">
                     <list-item for="{{st_items}}">
-                        <storage-list st_item_image="{{$item.img_path}}" st_item_name="{{$item.food_name}}"
+                        <storage-list st_item_image="{{$item.img_path}}"
+                                      st_item_name="{{$item.food_name}}"
                                       st_item_weight="{{$item.item_weight}}"></storage-list>
                     </list-item>
                 </list>
@@ -89,7 +95,7 @@
 
     <div class="set3" style="flex-direction: row;">
         <list id="List" style="flex-direction: row;">
-            <list-item type="common">
+            <list-item type="common" >
                 <div class="refri-door" style="background-image: {{refrigerator_doors_bg}}; flex-direction: column;">
                     <text class="refri-door-text">{{door_text}}</text>
                     <text class="refri-door-status">{{door_status}}</text>
