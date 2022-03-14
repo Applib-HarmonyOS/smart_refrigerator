@@ -31,7 +31,9 @@ allprojects {
         maven {
             url 'https://developer.huawei.com/repo/'
         }
-    }
+	    jcenter()
+    }	
+}
 
     sonarqube {
         properties {
