@@ -1,8 +1,5 @@
 import file from '@system.file'
-import app from '@system.app'
-import device from '@system.device'
-import router from '@system.router'
-import {Core, Constant, ExpectExtend, ReportExtend, InstrumentLog} from 'deccjsunit/index'
+import {Core, ExpectExtend, ReportExtend, InstrumentLog} from 'deccjsunit/index'
 
 export default {
     data: {
