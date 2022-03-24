@@ -1,5 +1,5 @@
 import app from '@system.app'
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from 'deccjsunit/index'
+import {describe, it, expect} from 'deccjsunit/index'
 
 describe('appInfoTest', function () {
     it('app_info_test_001', 0, function () {
