@@ -1,0 +1,9 @@
+<div style="flex-direction: column">
+     <div class="set1_sub2">
+          <text class="txt1">{{product_name}}</text>
+          <text class="txt1">{{product_percent}}</text>
+     </div>
+     <div class="v-base" style="background-image: {{bg_bar}};">
+          <image src="{{percent_color}}" style="width: {{product_percent}};"></image>
+     </div>
+</div>
